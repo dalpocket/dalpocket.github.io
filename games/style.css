@@ -1,0 +1,19 @@
+:root{color-scheme:dark;--night:#0a1224;--gold:#f2d59f;--line:#c7a46a;--panel:#121c31}
+*{box-sizing:border-box}body{margin:0;background:var(--night) url(assets/background.svg) center top / 100% auto no-repeat;color:#fff0d1;font:16px system-ui,sans-serif}
+main{width:min(100% - 36px,1440px);margin:auto;padding-bottom:52px}
+header{display:flex;align-items:center;gap:10px;padding:18px 0;border-bottom:1px solid var(--line);font-weight:700}
+header img{width:46px}header small{display:block;color:var(--gold)}
+.hero{display:grid;grid-template-columns:1.1fr 1fr;align-items:center}
+h1{font-size:clamp(26px,5vw,76px);margin:0;letter-spacing:-.05em}.hero img{width:100%;max-height:420px;object-fit:contain}
+h2{display:flex;gap:12px;align-items:center;margin:20px 0 14px;font-size:clamp(18px,2.5vw,28px)}h2::after{content:"";flex:1;height:1px;background:var(--line)}
+.grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:clamp(9px,1.6vw,22px)}
+.card{overflow:hidden;border:1px solid var(--line);border-radius:clamp(12px,1.6vw,24px);background:var(--panel)}.art{display:block;width:100%;aspect-ratio:5/4;object-fit:cover}
+.card h3{margin:0;padding:12px 8px;text-align:center;font-size:clamp(13px,1.9vw,24px);overflow-wrap:anywhere}
+.upcoming{grid-template-columns:1fr}.upcoming .art{aspect-ratio:4.6/1}
+.cta{display:block;width:max-content;margin:0 auto 12px;padding:7px 12px;color:var(--night);background:var(--gold);border-radius:20px;text-decoration:none}
+@media (max-width:700px),(orientation:portrait){.grid{grid-template-columns:repeat(2,minmax(0,1fr))}.upcoming{grid-template-columns:1fr}.upcoming .art{aspect-ratio:2.4/1}.hero img{min-height:130px}}
+body[data-layout=landscape] .grid{grid-template-columns:repeat(4,minmax(0,1fr))}
+body[data-layout=portrait] .grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+body[data-layout] .upcoming{grid-template-columns:1fr}
+body[data-layout=portrait] main{max-width:850px}body[data-layout=portrait] .upcoming .art{aspect-ratio:2.4/1}
+.cta.soon{background:transparent;color:var(--gold);border:1px solid var(--line)}
